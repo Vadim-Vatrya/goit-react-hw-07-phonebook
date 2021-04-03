@@ -15,38 +15,3 @@ export const deleteContactError = createAction('contacts/deleteContactRequest');
 
 export const changeFilter = createAction('contacts/changeFilter');
 
-
-// export const addContact = createAction('contacts/add', (name, number) => ({
-//     payload: {
-//         id: shortid.generate(),
-//         name,
-//         number,
-//     },
-// }));
-
-// export const   addContact = ({ name, number }) => ({
-//   type: types.ADD,
-//   payload: {
-//     id: shortid.generate(),
-//     name,
-//     number,
-// }
-// });
-
-// export const deleteContact = createAction('contacts/delete');
-
-// export const deleteContact = (id) => ({
-//   type: types.DELETE,
-//   payload: id,
-// });
-
-// export const changeFilter = createAction('contacts/changeFilter');
-
-// export const changeFilter = value => ({
-//   type: 'CHANGE_FILTER',
-//   payload: value,
-// });
-
-
-// const contactsActions = { addContact, deleteContact, changeFilter };
-// export default contactsActions;

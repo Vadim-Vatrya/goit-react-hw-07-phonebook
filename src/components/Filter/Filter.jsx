@@ -1,7 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import * as contactsActions from '../../redux/contacts/contact-actions';
-// import { connect } from 'react-redux';
-// import styles from './Filter.module.scss';
+import {changeFilter} from '../../redux/contacts/contact-actions';
 import { getFilter } from '../../redux/contacts/contact-selectors';
 import {createUseStyles} from 'react-jss'
 
@@ -41,7 +39,7 @@ const Filter = () => {
                 className={classes.input}
                 value={value}
                 onChange={event =>
-                    dispatch(contactsActions.changeFilter(event.target.value))
+                    dispatch(changeFilter(event.target.value))
                 }
                 autoComplete="off"
             />
