@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 // import { connect } from 'react-redux';
 
 import styles from './ContactForm.module.scss';
-import * as contactsActions from '../../redux/contacts/contact-actions';
+import {addContact} from '../../redux/contacts/contact-operations';
+// import * as contactsActions from '../../redux/contacts/contact-actions';
 import { getContacts } from '../../redux/contacts/contact-selectors';
 import Button from '../Button';
+
 
 export default function ContactForm() {
     const [name, setName] = useState('');
@@ -49,7 +51,7 @@ export default function ContactForm() {
           return;
         }
     
-        dispatch(contactsActions.addContact(name, number));
+        dispatch(addContact(name, number));
         reset();
       };
     
