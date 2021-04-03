@@ -12,7 +12,7 @@ import {
 } from './contact-actions';
 
 
-axios.gefault.baseUrl = 'http://localhost:4040';
+axios.default.baseUrl = 'http://localhost:4040';
 
 
 export const fetchContacts = () => dispatch => {
