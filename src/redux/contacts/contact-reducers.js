@@ -26,14 +26,27 @@ const itemsReducer = createReducer(initialState, {
 
 
 const filterReducer = createReducer('', {
-    [contactsActions.changeFilter]: (_, { payload }) => payload,
+    [changeFilter]: (_, { payload }) => payload,
 });
+
+const LoadingReducer = createReducer(false, {
+    [fetchContactsRequest]: () => true,
+    [fetchContactsSuccess]: () => false,
+    [fetchContactsError]: () => false,
+    [addContactRequest]: () => true,
+    [addContactSuccess]: () => false,
+    [addContactError]: () => false,
+    [deleteContactRequest]: () => true,
+    [deleteContactSuccess]: () => false,
+    [deleteContactError]: () => false,
+})
 
 
 
 const contactsReducer = combineReducers({
     items: itemsReducer,
     filter: filterReducer,
+    loading: LoadingReducer,
 });
 
 export default contactsReducer;
