@@ -2,25 +2,26 @@ import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 // import * as contactsActions from './contact-actions';
 import {
-  fetchContactsRequest,
-  fetchContactsSuccess,
-  fetchContactsError,
-  addContactRequest,
-  addContactSuccess,
-  addContactError,
-  deleteContactRequest,
-  deleteContactSuccess,
-  deleteContactError,
+//   fetchContactsRequest,
+//   fetchContactsSuccess,
+//   fetchContactsError,
+//   addContactRequest,
+//   addContactSuccess,
+//   addContactError,
+//   deleteContactRequest,
+//   deleteContactSuccess,
+//   deleteContactError,
   changeFilter
 } from './contact-actions';
+import { fetchContacts, addContact, deleteContact } from './contact-operations';
 
 
 const initialState = [];
 
 const itemsReducer = createReducer(initialState, {
-    [fetchContactsSuccess]: (_, action) => action.payload,
-    [addContactSuccess]: (state, { payload }) => [payload, ...state],
-    [deleteContactSuccess]: (state, { payload }) =>
+    [fetchContacts.fulfilled]: (_, { payload }) => payload,
+    [addContact.fulfilled]: (state, { payload }) => [payload, ...state],
+    [deleteContact.fulfilled]: (state, { payload }) =>
         state.filter(({ id }) => id !== payload),
 });
 
@@ -30,15 +31,15 @@ const filterReducer = createReducer('', {
 });
 
 const LoadingReducer = createReducer(false, {
-    [fetchContactsRequest]: () => true,
-    [fetchContactsSuccess]: () => false,
-    [fetchContactsError]: () => false,
-    [addContactRequest]: () => true,
-    [addContactSuccess]: () => false,
-    [addContactError]: () => false,
-    [deleteContactRequest]: () => true,
-    [deleteContactSuccess]: () => false,
-    [deleteContactError]: () => false,
+    [fetchContacts.pending]: () => true,
+    [fetchContacts.fulfilled]: () => false,
+    [fetchContacts.rejected]: () => false,
+    [addContact.pending]: () => true,
+    [addContact.fulfilled]: () => false,
+    [addContact.rejected]: () => false,
+    [deleteContact.pending]: () => true,
+    [deleteContact.fulfilled]: () => false,
+    [deleteContact.rejected]: () => false,
 })
 
 

@@ -10,11 +10,6 @@ import {
 } from 'redux-persist';
 import contactsReducer from './contacts/contact-reducers';
 
-// const contactsPersistConfig = {
-//     key: 'rootReducer',
-//     storage,
-//     blacklist: ['filter'],
-// };
 
 const middleware = [
     ...getDefaultMiddleware({
@@ -26,8 +21,6 @@ const middleware = [
 ];
 
 
-
-
 const store = configureStore({
     reducer: {
         contacts:  contactsReducer
@@ -36,6 +29,5 @@ const store = configureStore({
     devTools: process.env.NODE_ENV === 'development',
 });
 
-// const persistor = persistStore(store);
 
 export default store;
