@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-// import shortid from 'shortid';
+
 
 export const fetchContactsRequest = createAction('contacts/fetchContactRequest');
 export const fetchContactsSuccess = createAction('contacts/fetchContactSuccess');
@@ -14,4 +14,3 @@ export const deleteContactSuccess = createAction('contacts/deleteContactSuccess'
 export const deleteContactError = createAction('contacts/deleteContactRequest');
 
 export const changeFilter = createAction('contacts/changeFilter');
-

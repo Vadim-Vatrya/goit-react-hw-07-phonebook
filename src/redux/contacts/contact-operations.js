@@ -13,7 +13,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // } from './contact-actions';
 
 
-axios.default.baseUrl = 'http://localhost:4040';
+axios.defaults.baseURL = 'http://localhost:4040';
 
 
 export const fetchContacts = createAsyncThunk(

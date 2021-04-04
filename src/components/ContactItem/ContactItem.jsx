@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
-// import * as contactsActions from '../../redux/contacts/contact-actions';
 import {deleteContact} from '../../redux/contacts/contact-operations';
 
 
@@ -33,7 +32,7 @@ export default ContactItem;
 ContactItem.propTypes = {
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
 };
 
 

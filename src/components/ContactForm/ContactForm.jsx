@@ -4,10 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './ContactForm.module.scss';
 import {addContact} from '../../redux/contacts/contact-operations';
-// import * as contactsActions from '../../redux/contacts/contact-actions';
 import { getContacts } from '../../redux/contacts/contact-selectors';
 import Button from '../Button';
-
 
 export default function ContactForm() {
     const [name, setName] = useState('');
