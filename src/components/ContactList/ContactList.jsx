@@ -3,8 +3,9 @@ import { getVisibleContacts, getLoading } from '../../redux/contacts/contact-sel
 import ContactItem from '../ContactItem';
 import {useEffect} from 'react';
 import {fetchContacts} from '../../redux/contacts/contact-operations';
-// import { connect } from 'react-redux';
 
+
+import Loader from '../Loader';
 import styles from './ContactList.module.scss';
 
 
@@ -21,17 +22,22 @@ const ContactList = () => {
     }, [dispatch])
 
     return (
-        <ul className={styles.list}>
-            {contacts.length === 0 && <p>'No contacts'</p>}
+        <>
+        {loading && <Loader />}
 
-            {loading && <p>Loading...</p>}
-            
+        {!loading && contacts && contacts.length > 0 
+        ? (<ul className={styles.list}>
             {contacts.map(({ id, name, number }) => (
                 <li key={id} className={styles.listItem}>
                     <ContactItem name={name} number={number} id={id} />
                 </li>
             ))}
-        </ul>
+        </ul>)
+        : null}
+        </>
+
+
+        
     );
 };
 
