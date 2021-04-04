@@ -16,9 +16,8 @@ import {
 import { fetchContacts, addContact, deleteContact } from './contact-operations';
 
 
-const initialState = [];
 
-const itemsReducer = createReducer(initialState, {
+const itemsReducer = createReducer([], {
     [fetchContacts.fulfilled]: (_, { payload }) => payload,
     [addContact.fulfilled]: (state, { payload }) => [payload, ...state],
     [deleteContact.fulfilled]: (state, { payload }) =>
