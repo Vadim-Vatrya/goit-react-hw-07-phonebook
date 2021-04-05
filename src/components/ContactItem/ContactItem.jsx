@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
+
 import {deleteContact} from '../../redux/contacts/contact-operations';
 
 

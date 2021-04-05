@@ -15,12 +15,21 @@ export const getLoading = state => state.contacts.loading;
 //     );
 // };
 
+// export const getVisibleContacts = createSelector(
+//   [getContacts, getFilter],
+//   (сontacts, filter) => {
+//     const normalizedFilter = filter.toLowerCase();
+//     return contacts.filter(contact =>
+//       contact.name.toLowerCase().includes(normalizedFilter),
+//     );
+//   },
+// );
+
 export const getVisibleContacts = createSelector(
-    [getContacts, getFilter],
-    (contacts, filter) => {
-        const normalizedFilter = filter.toLowerCase();
-        return contacts.filter(({ name }) =>
-            name.toLowerCase().includes(normalizedFilter),
-        );
-    },
+  [getContacts, getFilter],
+  (contacts, filter) => {
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(({ name }) => name.toLowerCase().includes(normalizedFilter),
+    );
+  },
 );
